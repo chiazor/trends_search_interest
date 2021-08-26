@@ -24,12 +24,12 @@ def search_interest():
         dt.drop('isPartial', axis=1, inplace=True)
         df.append(dt)
         print('please wait...')
-        print("keywords are processed in batches to avoid socket connection timeout from the API....")
-        time.sleep(30)
+        print("keywords are processed in batches to minimize connection timeouts ..")
+        time.sleep(60)
 
     k_data = pd.concat(df, axis=1)
     # k_data.to_csv('interest_score.csv', encoding='utf_8_sig')
-    k_data.to_json('interest_score.json', orient='columns')
+    k_data.to_json('interest_score.json', orient='columns', date_format="iso")
 
 
 # restart the script after a timeout

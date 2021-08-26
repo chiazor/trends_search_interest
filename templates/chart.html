@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>search interest</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js" integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+<canvas id="lineChart" width="1000" height="600" ></canvas>
+<script>
+    var ctx = document.getElementById("lineChart").getContext("2d");
+    var lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+    labels: {{ labels | safe }},
+    datasets: [
+    {
+    label: "Search Interest for Keyword (tokyo olympics)",
+    data: {{ values | safe }},
+    fill: false,
+    borderColor: "rgb(75,192, 192)",
+    lineTension: 0.4
+    }
+    ]
+    },
+    options: {
+    responsive: false,
+   scales: {
+      xAxes: [{
+        type: 'time'
+      }]
+    }
+    }
+    });
+</script>
+</body>
+</html>
