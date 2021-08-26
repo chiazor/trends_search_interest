@@ -58,7 +58,7 @@ interact with a live chart
 
 http://34.121.1.99:5000/
 ```
-The host folder is mounted on the contianers to allow the python scripts read and write to the same json file independently.
+The host folder is mounted on the containers to allow the python scripts read and write to the same json file independently.
 
 see Dockerfile and docker-compose yml
 
