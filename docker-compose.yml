@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  datapuller:
+    build: ./datapuller
+    volumes:
+      - ./datapuller:/usr/src/app # mount point
+  trendsapi:
+    build: ./trends
+    volumes:
+      - ./trends:/usr/src/app # mount
+    ports:
+      - 5000:5000  # host:container
+    depends_on:
+      - datapuller

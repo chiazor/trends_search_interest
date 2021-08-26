@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 import json
 from datetime import datetime
 
+
 # load json data
 score_file = open('interest_score.json')
 score_data = json.load(score_file)
@@ -11,7 +12,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def chart():
-    # creating charts for ncis keywords to observe its trend
+    # creating charts for tokyo olympics keywords to observe its trend
 
     data = score_data['tokyo olympics'].items()
     x_label = [row[0] for row in data]

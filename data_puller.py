@@ -30,6 +30,7 @@ def search_interest():
     k_data = pd.concat(df, axis=1)
     # k_data.to_csv('interest_score.csv', encoding='utf_8_sig')
     k_data.to_json('interest_score.json', orient='columns', date_format="iso")
+    #return k_data.to_json(orient='columns', date_format="iso")
 
 
 # restart the script after a timeout
