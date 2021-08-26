@@ -51,11 +51,17 @@ response sample
 ```
 
 ## Cloud deployment 
-data_puller job script and flask api is deployed using docker on separate containers. 
+`data_puller python script` and `flask api` is deployed on `GCP` using `docker` on separate docker containers. 
+
+```
+interact with a chart 
+
+http://34.121.1.99:5000/
+```
 
 see Dockerfile and docker-compose yml
 
-The host folder is mounted on the contianers to allow the python scripts read and write to the same json file idependently.
+The host folder is mounted on the contianers to allow the python scripts read and write to the same json file independently.
 
 
 
@@ -68,5 +74,8 @@ interact with the 'tokyo olympics' search interest
 ```
 http://34.121.1.99:5000/
 ```
-data refreshes 3-4 hours 
+data refreshes on the hour
 
+
+## Reference
+[PyTrends - Pseudo API for Google Trends]('https://github.com/GeneralMills/pytrends')
