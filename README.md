@@ -34,7 +34,7 @@ api/search_interest?keyword=< keyword >
 example 
 ```
 http://127.0.0.1:5000/api/search_interest?keyword=ncis
-http://34.121.1.99:5000/api/search_interest?keyword=mark harmon
+
 
 
 ```
