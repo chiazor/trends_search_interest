@@ -17,17 +17,17 @@ The job runs in batch of 5 keywords
 
 the script is set to sleep for 60 secs per batch to minimize connection timeouts
 
-The output is saved as a json file 
+The output is saved to a json file 
 
 ## API request
+deployed data puller api with flask
 
 ``` 
 python app.py
 
 ```
 
-send GET request 
-
+send GET request sample
 
 api/search_interest?keyword=< keyword >
 
@@ -51,21 +51,30 @@ response sample
 ```
 
 ## Cloud deployment 
-`data_puller python script` and `flask api` is deployed on `GCP` using `docker` on separate docker containers. 
+`data_puller python script` and `flask api` is deployed on `GCP` VM instance using `docker` on separate docker containers. 
 
 ```
-interact with a chart 
+interact with a live chart 
 
 http://34.121.1.99:5000/
 ```
+The host folder is mounted on the contianers to allow the python scripts read and write to the same json file independently.
 
 see Dockerfile and docker-compose yml
 
-The host folder is mounted on the contianers to allow the python scripts read and write to the same json file independently.
+```
+send GET request
+
+example
+
+http://34.121.1.99:5000/api/search_interest?keyword=ncis
+
+```
 
 
 
 ## Github Action 
+
 
 
 ## Chart
@@ -78,4 +87,4 @@ data refreshes on the hour
 
 
 ## Reference
-[PyTrends - Pseudo API for Google Trends]('https://github.com/GeneralMills/pytrends')
+[PyTrends - Pseudo API for Google Trends](https://github.com/GeneralMills/pytrends)
